@@ -28,7 +28,7 @@ class Header extends Component {
         if (storeStatus && storeStatus != "false") {
             return (
                 <LinkContainer to="/login">
-                    <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }} onClick={this.logout.bind(this)}>
+                    <Button variant="outline-info" id='btn-sign' onClick={this.logout.bind(this)}>
                         Выход
                     </Button>
                 </LinkContainer>
@@ -36,7 +36,7 @@ class Header extends Component {
         } else {
             return (
                 <LinkContainer to="/login">
-                    <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }}>
+                    <Button variant="outline-info" id='btn-sign'>
                         Вход
                     </Button>
                 </LinkContainer>
