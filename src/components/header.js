@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Table, Form, Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Button, Form, Navbar, Container} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap'
 
 
 function IsLoggedPanel(props) {
     if (props.user.isLoggedInStatus && props.user.isLoggedInStatus != "false") {
-        return (
-            <Form inline >
-            
+        return (            
             <LinkContainer to="/login">
                 <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }}>
                     Выход
                 </Button>
             </LinkContainer>
-            </Form>
+            
         )
     } else {
-        return (
-            <Form inline>
+        return (         
             <LinkContainer to="/login">
                 <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }}>
                     Вход
                 </Button>
-            </LinkContainer>
-            </Form>
+            </LinkContainer>    
         )
     }
 }

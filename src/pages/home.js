@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import getStore from '../store/configureStore';
+import { Form } from 'react-bootstrap';
 
 
 
@@ -198,7 +199,7 @@ export default class Home extends Component {
                             <h2>Есть вопрос? Ответим через 36 секунд</h2>
                             <p>Оставьте заявку, и наш специалист проконсультирует вас</p>
 
-                            <form method="get" action="index.html" className="form-questions">
+                            <Form method="get" action="index.html" className="form-questions">
                                 <div className="input-data">
                                     <i className="fa fa-user"></i>
                                     <input type="text" name="name" placeholder='Ваше имя' />
@@ -214,7 +215,7 @@ export default class Home extends Component {
                                         <span>Заказать звонок</span>
                                     </div>
                                 </div>
-                            </form>
+                            </Form>
                         </div>
 
                         <div className="container-home">
