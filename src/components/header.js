@@ -1,28 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Form, Navbar, Container} from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap'
-
-
-function IsLoggedPanel(props) {
-    if (props.user.isLoggedInStatus && props.user.isLoggedInStatus != "false") {
-        return (            
-            <LinkContainer to="/login">
-                <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }}>
-                    Выход
-                </Button>
-            </LinkContainer>
-            
-        )
-    } else {
-        return (         
-            <LinkContainer to="/login">
-                <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }}>
-                    Вход
-                </Button>
-            </LinkContainer>    
-        )
-    }
-}
+import { LinkContainer } from 'react-router-bootstrap';
+import getStore from '../store/configureStore';
+import { loggedOut } from '../action/index';
 
 class Header extends Component {
     constructor(props) {
@@ -34,10 +14,37 @@ class Header extends Component {
 
     logout() {
         localStorage.setItem('isLoggedIn', false);
+        const store = getStore();
+        store.dispatch(loggedOut({ isLoggedInStatus: false }));
+
+        //console.log('store login', store.getState().user);
+        //console.log('local store login', localStorage.getItem('isLoggedIn'));
+    }
+
+    IsLoggedPanel() {
+        const storeStatus = getStore().getState().user.isLoggedInStatus;
+        //console.log('head store', storeStatus);
+        //console.log('head store local', localStorage.getItem('isLoggedIn'));
+        if (storeStatus && storeStatus != "false") {
+            return (            
+                <LinkContainer to="/login">
+                    <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }} onClick={this.logout.bind(this)}>
+                        Выход
+                    </Button>
+                </LinkContainer> 
+            )
+        } else {
+            return (         
+                <LinkContainer to="/login">
+                    <Button variant="outline-info" style={{ marginLeft: 30 + 'px' }}>
+                        Вход
+                    </Button>
+                </LinkContainer>    
+            )
+        }
     }
 
     render() {
-
         return (
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
@@ -59,14 +66,18 @@ class Header extends Component {
                         <LinkContainer to="/news">
                             <Navbar.Brand >
                                 Новости
-                        </Navbar.Brand>
+                            </Navbar.Brand>
                         </LinkContainer>
                         <LinkContainer to="/profile">
                             <Navbar.Brand >
                                 Профиль
                             </Navbar.Brand>
                         </LinkContainer>
-                        <IsLoggedPanel user={this.state.user}></IsLoggedPanel>
+                        {this.IsLoggedPanel()}
+                        {
+                            //<IsLoggedPanel user={this.state.user}></IsLoggedPanel>
+                        }
+                        
 
                     </Navbar.Collapse>
                     </Form>

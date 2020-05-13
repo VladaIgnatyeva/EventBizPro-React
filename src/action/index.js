@@ -4,4 +4,11 @@ export const loggedIn = (data) => {
         payload: data
     }
 }
+
+export const loggedOut = (data) => {
+    return{
+        type: "LOGGED_OUT",
+        payload: data
+    }
+}
  

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import getStore from '../store/configureStore';
-import { loggedIn } from '../action/index';
+import { loggedIn, loggedOut } from '../action/index';
 
 const LOGIN = 'Admin';
 const PASSWORD = '12345';
@@ -19,6 +19,10 @@ export default class SignIn extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+
+        localStorage.setItem('isLoggedIn', false);
+        const store = getStore();
+        store.dispatch(loggedOut({ isLoggedInStatus: false }));
     }
 
     handleChange = event => {
@@ -36,14 +40,18 @@ export default class SignIn extends Component {
             password: this.state.password
         };
 
-        if (this.state.password.length > 0 && this.state.login.length > 0) {
+        //console.log('user', user);
+        if (user.password.length > 0 && user.login.length > 0) {
             if (this.state.login === LOGIN && this.state.password === PASSWORD) {
                 localStorage.setItem('isLoggedIn', true);
 
                 const store = getStore();
-                store.dispatch(loggedIn({ username: 'User', role: 'user', id: '1', isLoggedInStatus: true, avatar: '' }));
-            
-                this.props.history.push(`/profile`);
+                store.dispatch(loggedIn({ isLoggedInStatus: true }));
+
+                //console.log('store login', store.getState().user);
+                //console.log('local store login', localStorage.getItem('isLoggedIn'));
+
+                this.props.history.push(`/home`);
             } else {
                 someElement.innerHTML = 'Имя пользователя или пароль введены неверно.';
             }

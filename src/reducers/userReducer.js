@@ -6,10 +6,20 @@ export default function userReducer(state = initialState.user, action) {
             return {
                 ...state,
                 isLoggedInStatus : true,
-                username: action.payload.username,
-                role: action.payload.role,
-                id: action.payload.id,
-                avatar: action.payload.avatar
+                //username: action.payload.username,
+                //role: action.payload.role,
+                //id: action.payload.id,
+                //avatar: action.payload.avatar
+            }
+        };
+        case "LOGGED_OUT": {
+            return {
+                ...state,
+                isLoggedInStatus : false,
+                //username: action.payload.username,
+                //role: action.payload.role,
+                //id: action.payload.id,
+                //avatar: action.payload.avatar
             }
         }
 

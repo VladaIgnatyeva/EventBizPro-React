@@ -11,7 +11,6 @@ function HeaderContainer(props) {
 
 const mapStateToProps = function (state) {
     //console.log("mapStateToProps state  ", state);
-
     return {
         user: state.user
     }
