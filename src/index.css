@@ -29,12 +29,21 @@ li{
 .header{
   width: 100%;
   display: flex; 
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: sticky;
   top: 0;
-  background: rgba(6, 6, 6, 0.8);
+  background: rgba(2, 2, 2, 0.98);
   z-index: 100;
+  padding: 15px;
+}
+
+.header-div{
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .eventBizPro {   
@@ -56,9 +65,8 @@ li{
 }
 
 .header_logo{
-  margin-top: 2%;
-  margin-left: 9%;
-  margin-bottom: 0%;
+  margin-top: 4px;
+  margin-bottom: 2px;
   font-family: Roboto;
   letter-spacing: 0.035em;
 
@@ -67,98 +75,34 @@ li{
 }
 
 nav{
-  padding-top: 5px;
+  
   padding-left: 6%;
   font-style: normal;
   font-weight: normal;
 }
 
-.topnav a{
+.topnav{
+  display: flex;
+  flex-direction: row;
+}
+.topnav div{
   color: rgba(255, 255, 255, 0.85);
   text-align: center; 
   padding: 5px 14px;
   font-size: 18px;
-  line-height: 25px;
+  line-height: 20px;
   font-weight: 400;
+  cursor: pointer;
 
 }
 
-.topnav a:hover{
+.topnav div:hover{
   border-bottom: 1px solid rgba(255, 255, 255, 0.85);
 }
 
 .topnav .icon{
   display: none;
 }
-
-/* icon phone in header */
-.phonewrap  {
-  display: table;
-  padding-left: 9%;
-  padding-right: 9%;
-  padding-top: 25px;
-  cursor: pointer;
-  
-}
-
-.fa-phone {
-  color: #fff;
-  display: inline-block;
-  font-size: 20px !important;
-      line-height: 25px !important;
-}
-
-.phonewrap span {  
-  border: 2px solid #FFFFFF;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 10px 5px;
-  padding: 5px;
-  width: 28px;
-  height: 28px;
-  text-align: center;
-}
-
-.phonewrap:hover > span i  {
-  animation: 1200ms ease 0s normal none 1 running shake;
-}
-@keyframes shake {
-  0% {
-      transform: rotateZ(0deg);
-  }
-  10% {
-      transform: rotateZ(-30deg);
-  }
-  20% {
-      transform: rotateZ(15deg);
-  }
-  30% {
-      transform: rotateZ(-10deg);
-  }
-  40% {
-      transform: rotateZ(7.5deg);
-  }
-  50% {
-      transform: rotateZ(-6deg);
-  }
-  60% {
-      transform: rotateZ(5deg);
-  }
-  70% {
-      transform: rotateZ(-4.28571deg);
-  }
-  80% {
-      transform: rotateZ(3.75deg);
-  }
-  90% {
-      transform: rotateZ(-3.33333deg);
-  }
-  100% {
-      transform: rotateZ(0deg);
-  }
-}
-
-
 
 
 main{
@@ -859,7 +803,7 @@ footer a:hover{
       left: -200px;
   }
 
-  header .topnav.responsive{
+  .header .topnav.responsive{
       height: 340px;
   }
 
@@ -985,7 +929,7 @@ footer a:hover{
 
 .bgSign {
   background-image: url(assets/rr2.jpeg);
-  width: 100;
+  width: 100%;
   height: auto;
 }
 
@@ -1007,10 +951,7 @@ footer a:hover{
   line-height: 70px
 }
 
-.linkSign {
-  color: #333333;
-  margin-left: 10px;
-}
+
 
 .textSign{
   color: #666666;

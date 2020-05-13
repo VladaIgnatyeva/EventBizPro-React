@@ -3,6 +3,10 @@ import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import getStore from '../store/configureStore';
 import { Form } from 'react-bootstrap';
+import gear from '../assets/icons/gear.png'
+import hand from '../assets/icons/hand.png'
+import brain from '../assets/icons/brain.png'
+import computer from '../assets/icons/computer.png'
 
 
 
@@ -74,7 +78,7 @@ export default class Home extends Component {
                                 <div className="grid_advantages">
                                     <div className="advantages_box1">
                                         <div className="img_advantages">
-                                            <img src="assets/icons/gear.png" alt="gear" width="100" height="100" />
+                                            <img src={gear} alt="gear" width="100" height="100" />
                                         </div>
                                         <div className="description_advantages">
                                             <h4>Многолетний опыт</h4>
@@ -83,7 +87,7 @@ export default class Home extends Component {
                                     </div>
                                     <div className="advantages_box2">
                                         <div className="img_advantages">
-                                            <img src="assets/icons/hand.png" alt="hand" width="100" height="100" />
+                                            <img src={hand} alt="hand" width="100" height="100" />
                                         </div>
                                         <div className="description_advantages">
                                             <h4>473 мероприятий</h4>
@@ -94,7 +98,7 @@ export default class Home extends Component {
                                     </div>
                                     <div className="advantages_box3">
                                         <div className="img_advantages">
-                                            <img src="assets/icons/brain.png" alt="brain" width="100" height="100" />
+                                            <img src={brain} alt="brain" width="100" height="100" />
                                         </div>
                                         <div className="description_advantages">
                                             <h4>Снимаем все оргвопросы</h4>
@@ -104,7 +108,7 @@ export default class Home extends Component {
                                     </div>
                                     <div className="advantages_box4">
                                         <div className="img_advantages">
-                                            <img src="assets/icons/computer.png" alt="computer" width="100" height="100" />
+                                            <img src={computer} alt="computer" width="100" height="100" />
                                         </div>
                                         <div className="description_advantages">
                                             <h4>Сильная IT-сторона</h4>
