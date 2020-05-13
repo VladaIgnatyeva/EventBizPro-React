@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import CardNews from '../components/cardNews';
+import { CardDeck } from 'react-bootstrap';
 
 export default class Profile extends Component {
     constructor(props) {
@@ -8,7 +10,14 @@ export default class Profile extends Component {
     render() {
         return (
             <div className="news">
-            dfghjkfg
+                <h1>Профиль</h1>
+                <div className='container-news'>
+                    <CardDeck>
+                        <CardNews />
+                        <CardNews />
+                        <CardNews />
+                    </CardDeck>
+                </div>
             </div>
         )
 

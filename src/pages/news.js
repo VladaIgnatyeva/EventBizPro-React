@@ -12,14 +12,15 @@ export default class News extends Component {
     render() {
         return (
             <div className="news">
-            
-            <div className='container-news'>
-                <CardDeck>
-                    <CardNews />
-                    <CardNews />  
-                    <CardNews />
-                </CardDeck>
-            </div>
+                <h1>Новости</h1>
+                
+                <div className='container-news'>
+                    <CardDeck>
+                        <CardNews />
+                        <CardNews />
+                        <CardNews />
+                    </CardDeck>
+                </div>
             </div>
         )
 

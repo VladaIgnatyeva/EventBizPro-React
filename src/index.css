@@ -969,3 +969,11 @@ footer a:hover{
   padding-bottom: 50px;
   padding-top: 50px;
 }
+
+.news h1{
+  color: rgb(233, 231, 231);
+  text-align: center;
+  width: 900;
+  line-height: 60px;
+  border-bottom: 3px solid rgb(231, 230, 230);
+}
