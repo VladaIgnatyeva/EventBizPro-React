@@ -3,9 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import getStore from '../store/configureStore';
 import { loggedIn, loggedOut } from '../action/index';
-
-const LOGIN = 'Admin';
-const PASSWORD = '12345';
+import auth from '../utils/auth'
 
 
 export default class SignIn extends Component {
@@ -40,9 +38,10 @@ export default class SignIn extends Component {
             password: this.state.password
         };
 
+        
         //console.log('user', user);
         if (user.password.length > 0 && user.login.length > 0) {
-            if (this.state.login === LOGIN && this.state.password === PASSWORD) {
+            if (auth(user.login, user.password)) {
                 localStorage.setItem('isLoggedIn', true);
 
                 const store = getStore();
