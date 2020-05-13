@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import getStore from '../store/configureStore';
 import { Form } from 'react-bootstrap';
@@ -7,6 +7,7 @@ import gear from '../assets/icons/gear.png'
 import hand from '../assets/icons/hand.png'
 import brain from '../assets/icons/brain.png'
 import computer from '../assets/icons/computer.png'
+import review_min from '../assets/review-min.png'
 
 
 
@@ -121,18 +122,12 @@ export default class Home extends Component {
                             </div>
 
 
-
-
-
                             <div className="main_reviews">
                                 <h2>Почитайте отзывы о нас</h2>
                                 <p>Каково это было для наших клиентов</p>
 
-
-                                <div className="slideshow-reviews-container">
-
-
-                                    <div className="reviewsSlides fade">
+                                <Carousel>
+                                    <Carousel.Item>
                                         <div className="reviewsSlidesGrid">
                                             <div className="reviews-p">
                                                 <p className="reviews-p1">Благодаря слаженной и конструктивной работе сотрудников
@@ -147,11 +142,10 @@ export default class Home extends Component {
                                                     <p> Nexans Russia</p>
                                                 </div>
                                             </div>
-                                            <img src='assets/review-min.png' className="review-img" />
+                                            <img src={review_min} className="review-img" />
                                         </div>
-                                    </div>
-
-                                    <div className="reviewsSlides fade">
+                                    </Carousel.Item>
+                                    <Carousel.Item>
                                         <div className="reviewsSlidesGrid">
                                             <div className="reviews-p">
                                                 <p className="reviews-p1">Благодаря слаженной и конструктивной работе сотрудников
@@ -166,11 +160,10 @@ export default class Home extends Component {
                                                     <p> Nexans Russia</p>
                                                 </div>
                                             </div>
-                                            <img src='assets/review-min.png' className="review-img" />
+                                            <img src={review_min} className="review-img" />
                                         </div>
-                                    </div>
-
-                                    <div className="reviewsSlides fade">
+                                    </Carousel.Item>
+                                    <Carousel.Item>
                                         <div className="reviewsSlidesGrid">
                                             <div className="reviews-p">
                                                 <p className="reviews-p1">Благодаря слаженной и конструктивной работе сотрудников
@@ -185,16 +178,11 @@ export default class Home extends Component {
                                                     <p> Nexans Russia</p>
                                                 </div>
                                             </div>
-                                            <img src='assets/review-min.png' className="review-img" />
+                                            <img src={review_min} className="review-img" />
                                         </div>
-                                    </div>
+                                    </Carousel.Item>
+                                </Carousel>
 
-                                    {/*
-                                    <a className="prev" onClick="plusSlides(-1)">&#10094;</a>
-                                    <a className="next" onClick="plusSlides(1)">&#10095;</a>*/
-                                    }
-                                    
-                                </div>
                             </div>
                         </div>
 
@@ -347,29 +335,29 @@ showSlides(slideIndex, 'gallerySlides');
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n, "reviewsSlides");
+    showSlides(slideIndex += n, "reviewsSlides");
 }
 
 function plusSlides2(n) {
-  showSlides(slideIndex += n, "gallerySlides");
+    showSlides(slideIndex += n, "gallerySlides");
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlides(slideIndex = n, "reviewsSlides");
+    showSlides(slideIndex = n, "reviewsSlides");
 }
 
 function currentSlide2(n) {
-  showSlides(slideIndex = n, "gallerySlides");
+    showSlides(slideIndex = n, "gallerySlides");
 }
 
 function showSlides(n, elem) {
-  var i;
-  var slides = document.getElementsByClassName(elem);
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  //slides[slideIndex-1].style.display = "block";
+    var i;
+    var slides = document.getElementsByClassName(elem);
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    //slides[slideIndex-1].style.display = "block";
 }
