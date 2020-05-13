@@ -51,7 +51,7 @@ export default class SignIn extends Component {
                 //console.log('store login', store.getState().user);
                 //console.log('local store login', localStorage.getItem('isLoggedIn'));
 
-                this.props.history.push(`/home`);
+                this.props.history.push(`/profile`);
             } else {
                 someElement.innerHTML = 'Имя пользователя или пароль введены неверно.';
             }

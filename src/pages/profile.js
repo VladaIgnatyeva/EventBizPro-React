@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
+export default class Profile extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-const Profile  = (props) => {
+    render() {
+        return (
+            <div className="news">
+            dfghjkfg
+            </div>
+        )
 
-
-    return(
-        <div>
-            <h2>TTTT</h2>
-        </div>
-    )
+    }
 }
-
-export default Profile;

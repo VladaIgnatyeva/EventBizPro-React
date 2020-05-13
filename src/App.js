@@ -9,9 +9,9 @@ import { Provider } from 'react-redux';
 import WrappHeader from './components/WrappHeader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const PrivateRouteAdmin = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    localStorage.getItem('isLogged') == 'true'
+    localStorage.getItem('isLoggedIn') != 'false'
       ? <Component {...props} />
       : <Redirect to='/login' />
   )} />
@@ -42,7 +42,7 @@ const App = (props) => {
         path="/login"
         component={Login}
       />
-      <PrivateRouteAdmin
+      <PrivateRoute
         exact
         path="/profile"
         component={Profile}
