@@ -802,6 +802,10 @@ footer a:hover{
     padding-top: 25%; 
 
   }
+
+  .news h1{
+    padding-top: 20%;
+  }
 }
 
 
@@ -850,6 +854,7 @@ footer a:hover{
   width: 900;
   line-height: 60px;
   border-bottom: 3px solid rgb(231, 230, 230);
+  padding-top: 10%;
 }
 
 #btn-sign {
