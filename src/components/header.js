@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Form, Navbar, Container } from 'react-bootstrap';
+import { Button, Form, Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import getStore from '../store/configureStore';
 import { loggedOut } from '../action/index';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -16,15 +17,11 @@ class Header extends Component {
         localStorage.setItem('isLoggedIn', false);
         const store = getStore();
         store.dispatch(loggedOut({ isLoggedInStatus: false }));
-
-        //console.log('store login', store.getState().user);
-        //console.log('local store login', localStorage.getItem('isLoggedIn'));
     }
 
     IsLoggedPanel() {
         const storeStatus = getStore().getState().user.isLoggedInStatus;
-        //console.log('head store', storeStatus);
-        //console.log('head store local', localStorage.getItem('isLoggedIn'));
+
         if (storeStatus && storeStatus != "false") {
             return (
                 <LinkContainer to="/login">
@@ -46,39 +43,45 @@ class Header extends Component {
 
     render() {
         return (
-            <div className='header'>
-                <div>
-                    <LinkContainer to="/home">
-                        <div className="header_logo">
-                            <div className="eventBizPro">EventBiz<span>Pro</span></div>
-                            <div>Организация семинаров</div>
-                        </div>
-                    </LinkContainer>
-                </div>
-                <div className='header-div'>
-                    <nav>
-                        <div className="topnav" id="myTopnav">
+            <div className="navWrapp">
 
-                            <LinkContainer to="/home">
-                                <div>
+            
+            <Navbar collapseOnSelect fixed="top" expand="md" variant="dark">
+                <Container >
+                    <LinkContainer to="/home">
+                        <Navbar.Brand >
+                            <div className="header_logo">
+                                <div className="eventBizPro">EventBiz<span>Pro</span></div>
+                                <div>Организация семинаров</div>
+                            </div>
+                        </Navbar.Brand>
+                    </LinkContainer>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Nav.Link as={Link} to="/home">
+                                <div className="txt">
                                     На главную
                                 </div>
-                            </LinkContainer>
-                            <LinkContainer to="/news">
-                                <div>
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/news">
+                                <div className="txt">
                                     Новости
                                 </div>
-                            </LinkContainer>
-                            <LinkContainer to="/profile">
-                                <div>
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/profile">
+                                <div className="txt">
                                     Профиль
                                 </div>
-                            </LinkContainer>
-                            
-                        </div>
-                    </nav>
-                </div>
-                {this.IsLoggedPanel()}
+                            </Nav.Link>
+                        </Nav>
+
+                        <Form inline>
+                            {this.IsLoggedPanel()}
+                        </Form>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
             </div>
         )
 
