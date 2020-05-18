@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    localStorage.getItem('isLoggedIn') != 'false'
+    localStorage.getItem('isLoggedIn') !== false
       ? <Component {...props} />
       : <Redirect to='/login' />
   )} />
@@ -21,6 +21,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 const App = (props) => {
 
   const store = props.store;
+  localStorage.setItem('isLoggedIn', false);
   return (
     <div>
       <Provider store={store}>
