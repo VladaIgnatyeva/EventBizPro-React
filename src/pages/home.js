@@ -15,7 +15,7 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
 
-        const store = getStore();
+        //const store = getStore();
 
         //console.log("Store redux home:  ", store.getState());
     }
@@ -142,7 +142,7 @@ export default class Home extends Component {
                                                     <p> Nexans Russia</p>
                                                 </div>
                                             </div>
-                                            <img src={review_min} className="review-img" />
+                                            <img src={review_min} className="review-img" alt="review-img" />
                                         </div>
                                     </Carousel.Item>
                                     <Carousel.Item>
@@ -160,7 +160,7 @@ export default class Home extends Component {
                                                     <p> Nexans Russia</p>
                                                 </div>
                                             </div>
-                                            <img src={review_min} className="review-img" />
+                                            <img src={review_min} className="review-img" alt="review-img" />
                                         </div>
                                     </Carousel.Item>
                                     <Carousel.Item>
@@ -178,7 +178,7 @@ export default class Home extends Component {
                                                     <p> Nexans Russia</p>
                                                 </div>
                                             </div>
-                                            <img src={review_min} className="review-img" />
+                                            <img src={review_min} className="review-img" alt="review-img"/>
                                         </div>
                                     </Carousel.Item>
                                 </Carousel>

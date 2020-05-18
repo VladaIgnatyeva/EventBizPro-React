@@ -22,7 +22,7 @@ class Header extends Component {
     IsLoggedPanel() {
         const storeStatus = getStore().getState().user.isLoggedInStatus;
 
-        if (storeStatus && storeStatus != "false") {
+        if (storeStatus && storeStatus !== false) {
             return (
                 <LinkContainer to="/login">
                     <Button variant="outline-info" id='btn-sign' onClick={this.logout.bind(this)}>
