@@ -32,12 +32,6 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-
-                <div className="offline">
-                    <Offline> <ModalOffline show={this.state.show} handleShow={this.handleShow.bind(this)}/> </Offline>
-                </div>
-
-
                 <div className="body-home">
                     <main>
                         <div className="container-home">
