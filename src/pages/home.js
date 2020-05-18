@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import getStore from '../store/configureStore';
@@ -7,7 +7,9 @@ import gear from '../assets/icons/gear.png'
 import hand from '../assets/icons/hand.png'
 import brain from '../assets/icons/brain.png'
 import computer from '../assets/icons/computer.png'
-import review_min from '../assets/review-min.png'
+import review_min from '../assets/review-min.png';
+import { Offline, Online } from "react-detect-offline";
+import ModalOffline from "../components/modalOffline"
 
 
 
@@ -15,15 +17,27 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            show: false
+        }
         //const store = getStore();
 
         //console.log("Store redux home:  ", store.getState());
     }
 
+    handleShow(){
+        this.setState( {show: !this.state.show});
+    }
 
     render() {
         return (
             <div>
+
+                <div className="offline">
+                    <Offline> <ModalOffline show={this.state.show} handleShow={this.handleShow.bind(this)}/> </Offline>
+                </div>
+
+
                 <div className="body-home">
                     <main>
                         <div className="container-home">

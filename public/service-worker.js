@@ -1,7 +1,10 @@
 let CACHE_NAME = 'your-app-name';
 let urlsToCache = [
   '/',
-  '/home'
+  '/home',
+  '/profile',
+  '/news',
+  '/login'
 ];
 
 // Install a service worker

@@ -82,6 +82,8 @@ class Header extends Component {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+
+            <div id="modal-root"></div>
             </div>
         )
 
