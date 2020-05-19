@@ -27,12 +27,15 @@ app.get('/ping', function (req, res) {
 });
 
 app.get('/news', function (req, res) {
+    //console.log('server get before');
 
     const result = News.find({}, {
         title: 1,
         description: 1,
+        _id: 1
     });
 
+    //console.log('server get ', result);
     result.then(data => res.json(data))
         .catch(err => res.status(400).send(err));
 });

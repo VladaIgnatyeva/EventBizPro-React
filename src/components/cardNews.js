@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import img_default from '../assets/rr.jpeg'
 
 
@@ -15,11 +15,11 @@ class CardNews extends Component {
                 <Card.Body>
                     <Card.Title>{this.props.item.title}</Card.Title>
                     <Card.Text>
-                        {this.props.item.text}
+                        {this.props.item.description}
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <small className="text-muted">{this.props.item.footer}</small>
+                    <small className="text-muted">Last updated 3 mins ago</small>
                 </Card.Footer>
             </Card >
         )
