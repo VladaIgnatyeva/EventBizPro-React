@@ -4,6 +4,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import getStore from '../store/configureStore';
 import { loggedOut } from '../action/index';
 import { Link } from 'react-router-dom';
+import WrappModalOffline from './wrappModalOffline'
+
 
 class Header extends Component {
     constructor(props) {
@@ -44,46 +46,45 @@ class Header extends Component {
     render() {
         return (
             <div className="navWrapp">
-
-            
-            <Navbar collapseOnSelect fixed="top" expand="md" variant="dark">
-                <Container >
-                    <LinkContainer to="/home">
-                        <Navbar.Brand >
-                            <div className="header_logo">
-                                <div className="eventBizPro">EventBiz<span>Pro</span></div>
-                                <div>Организация семинаров</div>
-                            </div>
-                        </Navbar.Brand>
-                    </LinkContainer>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link as={Link} to="/home">
-                                <div className="txt">
-                                    На главную
+                <WrappModalOffline />
+                <Navbar collapseOnSelect fixed="top" expand="md" variant="dark">
+                    <Container >
+                        <LinkContainer to="/home">
+                            <Navbar.Brand >
+                                <div className="header_logo">
+                                    <div className="eventBizPro">EventBiz<span>Pro</span></div>
+                                    <div>Организация семинаров</div>
                                 </div>
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/news">
-                                <div className="txt">
-                                    Новости
+                            </Navbar.Brand>
+                        </LinkContainer>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="mr-auto">
+                                <Nav.Link as={Link} to="/home">
+                                    <div className="txt">
+                                        На главную
                                 </div>
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/profile">
-                                <div className="txt">
-                                    Профиль
+                                </Nav.Link>
+                                <Nav.Link as={Link} to="/news">
+                                    <div className="txt">
+                                        Новости
                                 </div>
-                            </Nav.Link>
-                        </Nav>
+                                </Nav.Link>
+                                <Nav.Link as={Link} to="/profile">
+                                    <div className="txt">
+                                        Профиль
+                                </div>
+                                </Nav.Link>
+                            </Nav>
 
-                        <Form inline>
-                            {this.IsLoggedPanel()}
-                        </Form>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+                            <Form inline>
+                                {this.IsLoggedPanel()}
+                            </Form>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
 
-            <div id="modal-root"></div>
+                <div id="modal-root"></div>
             </div>
         )
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { Modal, Button, Card, Container, Form, } from "react-bootstrap";
 import Wrapper from '../utils/wrapperAxios';
-
+//import {init, list, addNews, clearNews} from '../utils/indexeddb'
+import { addNews } from '../utils/indexeddb'
 
 const NewsModal = (props) => {
     const { show, handleShow, updateNews } = props;
@@ -21,20 +22,17 @@ const NewsModal = (props) => {
             }
             //console.log("newCollection ", newCollection);
 
-            if (updateNews) {
-                const wrapp = new Wrapper();
-                wrapp.post('news', newNews)
-                    .then(res => {
-                        //console.log("response ", res.data);
-                        handleShow();
-                        updateNews();
-                    })
-                    .catch(err => {
-                        someElement.innerHTML = err;
-                    })
-            } else {
-                
-            }
+            const wrapp = new Wrapper();
+            wrapp.post('news', newNews)
+                .then(res => {
+                    //console.log("response ", res.data);
+                    handleShow();
+                    updateNews();
+                })
+                .catch(err => {
+                    someElement.innerHTML = err;
+                })
+
         }
     }
 

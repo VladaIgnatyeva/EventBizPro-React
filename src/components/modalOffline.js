@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, Button } from "react-bootstrap";
 
-const modalOffline = (props) => {
+const ModalOffline = (props) => {
     const {show, handleShow} = props;
-
 
     return (
         <Modal show={show} onHide={handleShow}>
@@ -20,4 +19,4 @@ const modalOffline = (props) => {
     )
 }
 
-export default modalOffline;
+export default ModalOffline;
