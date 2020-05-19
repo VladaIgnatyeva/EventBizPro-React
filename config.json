@@ -1,0 +1,5 @@
+{
+    "PORT": 8080,
+    "mongooseUri": "mongodb://localhost/eventbizpro",
+    "hostClient" : "http://localhost:3000"
+}
