@@ -15,7 +15,7 @@ export default class WrapperAxios {
     }
 
     get(url) {
-        console.log('wrapp', `${api}/${url}`)
+        // console.log('wrapp', `${api}/${url}`)
         //return axios.get(`http://localhost:8080/${url}`, { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } });
         return axios.get(`${api}/${url}`,  { headers: { Authorization: 'Bearer ' + localStorage.getItem('token') } })
     }

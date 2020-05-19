@@ -901,3 +901,9 @@ footer a:hover{
 .fixed-top{
   background: rgba(2, 2, 2, 0.95);
 }
+
+.wrapp-button{
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}

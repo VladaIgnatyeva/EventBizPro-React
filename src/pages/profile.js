@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CardNews from '../components/cardNews';
 import { cards } from './cards.store.stub';
 import Wrapper from '../utils/wrapperAxios';
+import AddButton from '../components/addButton'
 
 export default class Profile extends Component {
     constructor(props) {
@@ -29,10 +30,15 @@ export default class Profile extends Component {
         this.showNews();
     }
 
+    updateNews(){
+        this.showNews();        
+    }
+
     render() {
         return (
             <div className="news">
                 <h1>Профиль</h1>
+                <AddButton updateNews={this.updateNews.bind(this)}/>
                 <div className="container-news">
                     <div className="row">
                         {

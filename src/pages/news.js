@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CardNews from '../components/cardNews'
 // import { CardDeck } from 'react-bootstrap';
-import { cards } from './cards.store.stub';
+// import { cards } from './cards.store.stub';
 import Wrapper from '../utils/wrapperAxios';
 
 
@@ -18,7 +18,7 @@ export default class News extends Component {
         const wrapp = new Wrapper();
         wrapp.get(`news`)
             .then(res => {
-                console.log('res news', res.data)
+                //console.log('res news', res.data)
                 this.setState({
                     news: res.data
                 });

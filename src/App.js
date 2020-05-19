@@ -21,7 +21,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 const App = (props) => {
 
   const store = props.store;
-  localStorage.setItem('isLoggedIn', false);
+  //localStorage.setItem('isLoggedIn', false);
   return (
     <div>
       <Provider store={store}>
