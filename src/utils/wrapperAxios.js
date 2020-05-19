@@ -1,6 +1,6 @@
 import axios from 'axios';
-// const api = process.env.REACT_APP_API_URL
-const api = 'http://localhost:8080';
+const api = process.env.REACT_APP_API_URL
+//const api = 'http://localhost:8080';
 export default class WrapperAxios {
 
     post(url, data) {
