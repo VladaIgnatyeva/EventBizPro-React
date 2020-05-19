@@ -30,7 +30,8 @@ const NewsModal = (props) => {
                     updateNews();
                 })
                 .catch(err => {
-                    someElement.innerHTML = err;
+                    handleShow();
+                    // someElement.innerHTML = err;
                 })
 
         }
